@@ -1,0 +1,72 @@
+backend:
+  host: 127.0.0.1
+  port: 8001
+  debug: false
+  workers: 1
+  reload: false
+
+frontend:
+  host: localhost
+  port: 5173
+  debug: false
+
+models:
+  default: phi:latest
+  ollama_host: localhost
+  ollama_port: 11434
+  preferred_model_order:
+    - phi:latest
+    - qwen2.5:7b
+    - llama3:8b
+    - deepseek-r1:8b
+  model_timeouts:
+    phi:latest: 60
+    qwen2.5:7b: 90
+    llama3:8b: 90
+    deepseek-r1:8b: 120
+
+timeouts:
+  chat_request_seconds: 120
+  local_model_seconds: 120
+  api_call_seconds: 30
+
+logging:
+  level: INFO
+  path: logs
+  file: jarvis.log
+  max_bytes: 10485760
+  backup_count: 5
+
+features:
+  enable_voice: true
+  enable_code_execution: true
+  use_local_models: true
+  use_cloud_models: false
+  fallback_to_cloud: false
+  enable_legacy_agent_fallback: false
+
+autonomy:
+  policy: supervised
+  trusted_commands:
+    - open_application
+    - get_current_time
+    - get_weather
+    - search_web
+    - take_screenshot
+    - get_system_info
+    - read_file
+    - list_directory
+    - play_music
+    - send_whatsapp_message
+    - post_to_social_media
+    - check_inventory
+    - generate_invoice
+    - manage_bookings
+    - customer_lookup
+
+cloud:
+  call_limits:
+    per_request: 1
+    per_session: 5
+    per_minute: 2
+    per_hour: 10

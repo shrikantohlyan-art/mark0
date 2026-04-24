@@ -1,0 +1,61 @@
+Loading configuration...
+Attempting to import Core.main...
+[StocksTool] yfinance is not installed. Stock price features will fall back to web APIs.
+2026-04-15 14:24:39 [INFO] logging_utils: {"event":"logging_initialized","log_level":"INFO","file":"logs\\jarvis.log","pid":19204}
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: system_info
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: screenshot
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: run_app
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: open_url
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: web_search
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: fetch_page
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: list_files
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: read_file
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: write_file
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: delete_file
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: create_folder
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: open_browser_tab
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: click_button_by_text
+2026-04-15 14:24:39 [INFO] Core.tools_config: Registered tool: call_api
+OK: App imported successfully
+Starting uvicorn on 127.0.0.1:8001...
+2026-04-15 14:24:40 [INFO] router: Gemini client initialized with configured key index 0
+2026-04-15 14:24:46 [INFO] Core.main: Tool registry initialized: 47 tools
+2026-04-15 14:24:46 [INFO] memory_store: Memory initialized (ChromaDB) at ./data/memory
+2026-04-15 14:24:46 [INFO] Core.main: Memory store + learning engine initialized
+2026-04-15 14:24:46 [INFO] Core.main: Screen observer started
+2026-04-15 14:24:46 [WARNING] input_tracker: pynput not available - mouse tracking disabled
+2026-04-15 14:24:46 [INFO] input_tracker: Input tracker started
+2026-04-15 14:24:46 [INFO] Core.main: Input tracker started
+2026-04-15 14:24:46 [WARNING] input_tracker: pynput not available - keyboard tracking disabled
+2026-04-15 14:24:46 [INFO] Core.main: Daily learner started
+2026-04-15 14:24:46 [INFO] Core.main: JARVIS Mark-XXX v2.6.0 (Ultimate Edition + Agent Loop) Loaded Successfully
+2026-04-15 14:24:46 [INFO] screen_observer: Screen observer started (interval=120.0s)
+2026-04-15 14:24:46 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-04-15 14:24:47 [INFO] Core.main: {"event":"request_started","action":"http_request","status":"started","trace_id":"7072ceeb898742a6b6d70c4c17d307e2","method":"GET","path":"/health"}
+2026-04-15 14:24:47 [INFO] Core.main: {"event":"request_completed","action":"http_request","status":"ok","trace_id":"7072ceeb898742a6b6d70c4c17d307e2","method":"GET","path":"/health","status_code":200,"latency_ms":249.23}
+INFO:     127.0.0.1:56631 - "GET /health HTTP/1.1" 200 OK
+2026-04-15 14:24:47 [INFO] Core.main: {"event":"request_started","action":"http_request","status":"started","trace_id":"5dd0145368a44292b29f0b94c1f6d67a","method":"POST","path":"/api/chat"}
+2026-04-15 14:24:47 [INFO] Core.main: {"event":"chat_request_received","action":"chat_request","status":"started","trace_id":"5dd0145368a44292b29f0b94c1f6d67a","user_id":"default","provider":"ollama"}
+2026-04-15 14:24:47 [WARNING] jarvis.vector_memory: ChromaDB initialization failed (No module named 'hnswlib'); using in-memory fallback.
+2026-04-15 14:24:47 [INFO] root: 📄 Loading .env from: C:\Users\mtm\Desktop\mark0\.env
+2026-04-15 14:24:47 [INFO] root: ✓ .env file loaded successfully
+2026-04-15 14:24:47 [INFO] action.tool_router: {"event":"tool_plan_built","action":"tool_plan","status":"ok","trace_id":"5dd0145368a44292b29f0b94c1f6d67a","step_count":0,"clauses":1,"prompt":"mera naam shri hai"}
+2026-04-15 14:24:47 [INFO] jarvis.skills.loader: Loaded 33 skills (30 JSON, 3 legacy)
+2026-04-15 14:24:47 [INFO] JARVIS_Provider: OLLAMA REQUEST -> endpoint=http://localhost:11434/api/generate model=phi:latest payload_size=1475
+2026-04-15 14:24:50 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-04-15 14:24:51 [INFO] router: Gemini client initialized with configured key index 1
+2026-04-15 14:24:51 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-04-15 14:24:52 [WARNING] JARVIS_Provider: ProviderManager: provider ollama failed: Ollama is not running (port 11434 refused). Start it with 'ollama serve'.. Falling back to next provider.
+2026-04-15 14:24:52 [INFO] JARVIS_Provider: OLLAMA REQUEST -> endpoint=http://localhost:11434/api/generate model=llama3:8b payload_size=1474
+2026-04-15 14:24:56 [WARNING] JARVIS_Provider: ProviderManager: provider ollama failed: Ollama is not running (port 11434 refused). Start it with 'ollama serve'.. Falling back to next provider.
+2026-04-15 14:24:56 [INFO] JARVIS_Provider: OLLAMA REQUEST -> endpoint=http://localhost:11434/api/generate model=qwen2.5:7b payload_size=1475
+2026-04-15 14:24:59 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-15 14:24:59 [INFO] router: HybridRouter: gemini returned result (len=385)
+2026-04-15 14:24:59 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-04-15 14:25:00 [WARNING] JARVIS_Provider: ProviderManager: provider ollama failed: Ollama is not running (port 11434 refused). Start it with 'ollama serve'.. Falling back to next provider.
+2026-04-15 14:25:00 [INFO] JARVIS_Provider: OLLAMA REQUEST -> endpoint=http://localhost:11434/api/generate model=phi:latest payload_size=1475
+2026-04-15 14:25:00 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-04-15 14:25:01 [INFO] router: Gemini client initialized with configured key index 2
+2026-04-15 14:25:04 [WARNING] JARVIS_Provider: ProviderManager: provider ollama failed: Ollama is not running (port 11434 refused). Start it with 'ollama serve'.. Falling back to next provider.
+2026-04-15 14:25:04 [INFO] Core.main: {"event":"request_completed","action":"http_request","status":"ok","trace_id":"5dd0145368a44292b29f0b94c1f6d67a","method":"POST","path":"/api/chat","status_code":200,"latency_ms":17104.28}
+INFO:     127.0.0.1:56631 - "POST /api/chat HTTP/1.1" 200 OK

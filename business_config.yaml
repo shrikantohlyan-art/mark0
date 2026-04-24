@@ -1,0 +1,154 @@
+# JARVIS Business Edition Configuration
+# Optimized for Cyber Cafe + Meesho Store Operations
+
+# === PERSONALITY & BEHAVIOR ===
+personality:
+  name: "JARVIS Business Assistant"
+  greeting: "Namaste! Main aapka business assistant hoon. Aapki kaise madad kar sakta hoon?"
+  language_support:
+    - hindi
+    - hinglish
+    - english
+  tone: professional_but_friendly
+  response_style: concise_for_business
+
+# === BUSINESS CONTEXT ===
+business:
+  cyber_cafe:
+    name: "Your Cyber Cafe"
+    services:
+      - computer_rental
+      - printing
+      - scanning
+      - internet_browsing
+      - document_typing
+      - form_filling
+    pricing:
+      computer_per_hour: 30
+      print_per_page: 5
+      scan_per_doc: 10
+    hours: "8 AM - 10 PM"
+    total_computers: 10
+    
+  meesho_store:
+    name: "Your Sticker Store"
+    products:
+      - stickers
+      - custom_designs
+      - printed_merchandise
+    platforms:
+      - Meesho
+      - WhatsApp
+    shipping: "All India"
+
+# === AUTOMATED TASKS ===
+automation:
+  # Daily at 9 AM
+  morning_routine:
+    - check_pending_orders
+    - check_low_inventory
+    - send_daily_report
+    
+  # Check every 15 minutes
+  periodic_checks:
+    - check_new_whatsapp_messages
+    - check_meesho_notifications
+    - monitor_computer_bookings
+    
+  # Evening at 8 PM
+  evening_routine:
+    - generate_daily_summary
+    - backup_data
+    - notify_pending_payments
+
+# === WHATSAPP AUTOMATION ===
+whatsapp:
+  auto_reply:
+    enabled: true
+    business_hours_only: true
+    templates:
+      welcome: "Welcome to {business_name}! How can I help you today?"
+      order_confirm: "Thank you for your order! Order ID: {order_id}. We'll update you soon."
+      cafe_booking: "Computer {computer_no} booked for {duration} hours. Amount: ₹{amount}"
+      hours: "We're open 8 AM - 10 PM, 7 days a week."
+  
+  # Quick commands customers can send
+  quick_commands:
+    "price": "Send pricing information"
+    "hours": "Send business hours"
+    "location": "Send shop location"
+    "order": "Start order process"
+    "booking": "Check computer availability"
+
+# === SOCIAL MEDIA ===
+social_media:
+  platforms:
+    - whatsapp_status
+    - facebook
+    - instagram
+  
+  posting_schedule:
+    morning_post: "9:00 AM"
+    evening_post: "6:00 PM"
+  
+  auto_content:
+    - new_product_announcements
+    - special_offers
+    - customer_testimonials
+    - behind_the_scenes
+
+# === INVENTORY ALERTS ===
+inventory:
+  low_stock_threshold: 5
+  alert_channels:
+    - whatsapp
+    - desktop_notification
+  
+  auto_reorder_suggestions:
+    enabled: true
+    threshold: 10
+
+# === CUSTOMER MANAGEMENT ===
+customers:
+  loyalty_program:
+    enabled: true
+    points_per_rupee: 1
+    reward_threshold: 500
+    
+  reminder_schedule:
+    booking_reminder: "15 minutes before"
+    payment_reminder: "24 hours after due date"
+    follow_up: "3 days after order"
+
+# === NOTIFICATIONS ===
+notifications:
+  desktop:
+    enabled: true
+    sound: true
+  
+  whatsapp:
+    enabled: true
+    business_number: ""
+  
+  email:
+    enabled: false
+    smtp_server: ""
+    username: ""
+    password: ""
+
+# === SECURITY ===
+security:
+  allowed_file_types:
+    - .txt
+    - .pdf
+    - .doc
+    - .docx
+    - .jpg
+    - .png
+  
+  max_file_size_mb: 50
+  
+  restricted_commands:
+    - delete_system_files
+    - format_drive
+    - modify_system_settings

@@ -1,0 +1,40 @@
+# Core runtime (pinned to known-good local versions)
+fastapi==0.135.2
+uvicorn==0.42.0
+pydantic==2.12.5
+python-dotenv==1.2.2
+requests==2.33.0
+aiohttp==3.13.4
+PyYAML==6.0.3
+
+# Providers / AI integrations
+google-genai==1.69.0
+
+# Voice / TTS
+edge-tts==7.2.8
+pywhatkit==5.4
+instagrapi==2.4.1
+pyttsx3==2.99
+
+# Browser + automation
+playwright==1.58.0
+PyAutoGUI==0.9.54
+PyGetWindow==0.0.9
+mss==10.1.0
+pyperclip==1.11.0
+psutil==7.2.2
+pywin32==311
+comtypes==1.4.16
+Pillow==12.1.1
+pytesseract==0.3.13
+
+# Web tools
+duckduckgo_search==8.1.1
+beautifulsoup4==4.14.3
+
+# Memory/vector store (optional but present in this repo)
+chromadb==1.5.5
+numpy==2.4.4
+
+# Tests
+pytest==9.0.2

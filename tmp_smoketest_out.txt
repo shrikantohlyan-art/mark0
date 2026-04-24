@@ -1,0 +1,43 @@
+[StocksTool] yfinance is not installed. Stock price features will fall back to web APIs.
+2026-04-21 13:01:54 [INFO] logging_utils: {"event":"logging_initialized","log_level":"INFO","file":"logs\\jarvis.log","pid":13148}
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: system_info
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: screenshot
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: run_app
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: open_url
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: web_search
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: fetch_page
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: list_files
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: read_file
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: write_file
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: delete_file
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: create_folder
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: open_browser_tab
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: click_button_by_text
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: call_api
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: wikipedia_search
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: wikipedia_summary
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: weather_lookup
+2026-04-21 13:01:54 [INFO] Core.tools_config: Registered tool: rss_feed
+2026-04-21 13:01:54 [INFO] __main__: UI mounted at / from C:\Users\mtm\Desktop\mark0\Core\static
+2026-04-21 13:01:54 [INFO] __main__: 🚀 Starting JARVIS Mark-XXX v2.6.0 on 127.0.0.1:8001
+2026-04-21 13:01:55 [INFO] router: Gemini client initialized with configured key index 0
+2026-04-21 13:01:55 [INFO] __main__: Ollama service is running
+2026-04-21 13:01:55 [INFO] root: 📄 Loading .env from: C:\Users\mtm\Desktop\mark0\.env
+2026-04-21 13:01:55 [INFO] root: ✓ .env file loaded successfully
+2026-04-21 13:01:56 [WARNING] Core.runtime_config: Gemini currently unavailable per ProviderManager: {'status': 'degraded', 'latency_ms': 4360, 'last_error': 'Gemini quota exhausted (429)', 'consecutive_failures': 11, 'disabled_until': 1776689404.2273827, 'last_success_at': 1776677163.1207583, 'cooldown_seconds': 0}
+2026-04-21 13:01:56 [WARNING] Core.runtime_config: Gemini currently unavailable per ProviderManager: {'status': 'degraded', 'latency_ms': 4360, 'last_error': 'Gemini quota exhausted (429)', 'consecutive_failures': 11, 'disabled_until': 1776689404.2273827, 'last_success_at': 1776677163.1207583, 'cooldown_seconds': 0}
+2026-04-21 13:01:56 [WARNING] Core.runtime_config: Gemini currently unavailable per ProviderManager: {'status': 'degraded', 'latency_ms': 4360, 'last_error': 'Gemini quota exhausted (429)', 'consecutive_failures': 11, 'disabled_until': 1776689404.2273827, 'last_success_at': 1776677163.1207583, 'cooldown_seconds': 0}
+2026-04-21 13:01:56 [INFO] __main__: Tool registry initialized: 57 tools
+2026-04-21 13:01:56 [INFO] memory_store: Memory initialized (ChromaDB) at ./data/memory
+2026-04-21 13:01:56 [INFO] __main__: Memory store + learning engine initialized
+2026-04-21 13:01:56 [INFO] __main__: Screen observer started
+2026-04-21 13:01:56 [INFO] input_tracker: Input tracker started
+2026-04-21 13:01:56 [WARNING] input_tracker: Mouse tracking disabled (_DeadlockError: deadlock detected by _ModuleLock('pynput.keyboard') at 2550342419920)
+2026-04-21 13:01:56 [INFO] __main__: Input tracker started
+2026-04-21 13:01:56 [INFO] __main__: Daily learner started
+2026-04-21 13:01:56 [INFO] __main__: JARVIS Mark-XXX v2.6.0 (Ultimate Edition + Agent Loop) Loaded Successfully
+2026-04-21 13:01:56 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-04-21 13:01:56 [INFO] screen_observer: Screen observer started (interval=120.0s)
+2026-04-21 13:01:58 [INFO] Core.main: {"event":"request_started","action":"http_request","status":"started","trace_id":"92e3a11b9c254f618eda8d23cccb7d7f","method":"GET","path":"/health"}
+2026-04-21 13:01:58 [INFO] Core.main: {"event":"request_completed","action":"http_request","status":"ok","trace_id":"92e3a11b9c254f618eda8d23cccb7d7f","method":"GET","path":"/health","status_code":200,"latency_ms":11.08}
+INFO:     127.0.0.1:62379 - "GET /health HTTP/1.1" 200 OK

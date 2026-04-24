@@ -1,0 +1,37 @@
+Loading configuration...
+Attempting to import Core.main...
+[StocksTool] yfinance is not installed. Stock price features will fall back to web APIs.
+2026-04-15 14:38:24 [INFO] logging_utils: {"event":"logging_initialized","log_level":"INFO","file":"logs\\jarvis.log","pid":2016}
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: system_info
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: screenshot
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: run_app
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: open_url
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: web_search
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: fetch_page
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: list_files
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: read_file
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: write_file
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: delete_file
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: create_folder
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: open_browser_tab
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: click_button_by_text
+2026-04-15 14:38:24 [INFO] Core.tools_config: Registered tool: call_api
+OK: App imported successfully
+Starting uvicorn on 127.0.0.1:8001...
+2026-04-15 14:38:25 [INFO] router: Gemini client initialized with configured key index 0
+2026-04-15 14:38:32 [INFO] Core.main: Ollama service is running
+2026-04-15 14:38:34 [INFO] Core.main: Tool registry initialized: 47 tools
+2026-04-15 14:38:34 [INFO] memory_store: Memory initialized (ChromaDB) at ./data/memory
+2026-04-15 14:38:34 [INFO] Core.main: Memory store + learning engine initialized
+2026-04-15 14:38:34 [INFO] Core.main: Screen observer started
+2026-04-15 14:38:34 [INFO] input_tracker: Input tracker started
+2026-04-15 14:38:34 [WARNING] input_tracker: pynput not available - mouse tracking disabled
+2026-04-15 14:38:34 [WARNING] input_tracker: pynput not available - keyboard tracking disabled
+2026-04-15 14:38:34 [INFO] Core.main: Input tracker started
+2026-04-15 14:38:34 [INFO] Core.main: Daily learner started
+2026-04-15 14:38:34 [INFO] Core.main: JARVIS Mark-XXX v2.6.0 (Ultimate Edition + Agent Loop) Loaded Successfully
+2026-04-15 14:38:34 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-04-15 14:38:34 [INFO] screen_observer: Screen observer started (interval=120.0s)
+2026-04-15 14:38:34 [INFO] Core.main: {"event":"request_started","action":"http_request","status":"started","trace_id":"fd793359a44a48a6a4fa76781ca193a0","method":"GET","path":"/api/models"}
+2026-04-15 14:38:34 [INFO] Core.main: {"event":"request_completed","action":"http_request","status":"ok","trace_id":"fd793359a44a48a6a4fa76781ca193a0","method":"GET","path":"/api/models","status_code":200,"latency_ms":8.31}
+INFO:     127.0.0.1:49851 - "GET /api/models HTTP/1.1" 200 OK

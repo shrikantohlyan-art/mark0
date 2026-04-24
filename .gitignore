@@ -1,0 +1,59 @@
+# Environment & Secrets
+.env
+.env.local
+config/api_keys.json
+*.key
+*.pem
+
+# Python
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+.venv/
+build/
+dist/
+*.egg-info/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.claude/
+
+# Logs & Runtime
+logs/
+*.log
+memory/memory.db
+*.db
+memory/tts/
+training_logs/
+backend-*.log
+backend-*.err
+memory.txt
+config/whatsapp_session/
+
+# Backups
+*.bak
+*.backup
+*.zip
+jarvis-1/
+jarvis-ui-redesign-backup/
+logs/self_fix/backups/
+Jarvis_Laptop_Deploy.zip
+Trained_Brain_Data.zip
+
+# Frontend
+jarvis-ui-redesign/node_modules/
+jarvis-ui-redesign/dist/
+node_modules/
+
+# Downloads
+downloads/
+models/
