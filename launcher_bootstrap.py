@@ -169,12 +169,16 @@ def _normalize_command_line(info: dict[str, object] | None) -> str:
 def _is_jarvis_backend_process(info: dict[str, object] | None) -> bool:
     command_line = _normalize_command_line(info)
     root = str(APP_DIR).lower()
-    return root in command_line and (
-        "-m core.main" in command_line
-        or "core.main" in command_line
+    # Match both: python Core/main.py AND uvicorn Core.main:app (launched without full path)
+    _has_core_main = (
+        "core.main" in command_line
         or "core\\main.py" in command_line
         or "core/main.py" in command_line
+        or "-m core.main" in command_line
     )
+    # When launched via uvicorn module, APP_DIR may not be in command line — match by port instead
+    _has_port = f"--port {BACKEND_PORT}" in command_line or f"--port={BACKEND_PORT}" in command_line
+    return _has_core_main and (root in command_line or _has_port)
 
 
 def _is_jarvis_frontend_process(info: dict[str, object] | None) -> bool:
@@ -254,17 +258,27 @@ def reclaim_port(port: int, role: str) -> None:
 
 
 def force_release_backend_port() -> None:
+    # Step 1: Kill by window title (legacy approach — works when launched from START_JARVIS.bat)
     command = 'taskkill /F /IM python.exe /FI "WINDOWTITLE eq Jarvis Backend*" /T'
     log(f"Force releasing backend port with: {command}")
-    subprocess.run(
-        command,
-        shell=True,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        errors="ignore",
-        check=False,
-    )
+    subprocess.run(command, shell=True, capture_output=True, text=True,
+                   encoding="utf-8", errors="ignore", check=False)
+
+    # Step 2: PowerShell kill-by-port — handles uvicorn/nohup background launches
+    kill_script = rf"""
+$conn = Get-NetTCPConnection -LocalPort {BACKEND_PORT} -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1
+if ($conn -ne $null) {{
+    $pid_ = $conn.OwningProcess
+    $proc = Get-Process -Id $pid_ -ErrorAction SilentlyContinue
+    if ($proc -ne $null) {{
+        Write-Host "Killing PID $pid_ ($($proc.Name)) on port {BACKEND_PORT}"
+        Stop-Process -Id $pid_ -Force -ErrorAction SilentlyContinue
+        Start-Sleep -Milliseconds 800
+    }}
+}}
+"""
+    _run_powershell(kill_script)
+    time.sleep(0.5)
     reclaim_port(BACKEND_PORT, "backend")
 
 

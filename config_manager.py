@@ -146,6 +146,12 @@ class ConfigManager:
                 "deepseek-r1:8b": 90,
                 "qwen3.5:latest": 120,
             },
+            # Local model tuning and warmup options
+            "local_concurrency": 2,
+            "warmup_on_start": True,
+            "warmup_models": [],
+            "health_check_interval": 30,
+            "cache_ttl_seconds": 30,
         },
         "timeouts": {
             "chat_request_seconds": 120,

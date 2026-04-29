@@ -11,19 +11,15 @@ frontend:
   debug: false
 
 models:
-  default: phi:latest
+  default: qwen2.5:7b
+  gemini_model: gemini-2.5-flash
   ollama_host: localhost
   ollama_port: 11434
+  # RTX 3050 6GB: one model loaded = fast; four models = VRAM thrashing (5-15s cold start each switch)
   preferred_model_order:
-    - phi:latest
     - qwen2.5:7b
-    - llama3:8b
-    - deepseek-r1:8b
   model_timeouts:
-    phi:latest: 60
     qwen2.5:7b: 90
-    llama3:8b: 90
-    deepseek-r1:8b: 120
 
 timeouts:
   chat_request_seconds: 120
@@ -44,6 +40,11 @@ features:
   use_cloud_models: false
   fallback_to_cloud: false
   enable_legacy_agent_fallback: false
+  enable_training_mode: false
+  enable_screen_watcher: false
+  enable_daily_learner: false
+  training_mode_vision_provider: local
+  screen_watcher_interval_seconds: 300
 
 autonomy:
   policy: supervised
